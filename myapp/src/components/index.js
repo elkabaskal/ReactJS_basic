@@ -1,6 +1,19 @@
 import { useState, useEffect } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import { ChatList } from "./ChatList.js";
+import { MessageInput } from "./MessageInput.js";
+import { MessageList } from "./MessageList.js";
+
+
+const useStyles = makeStyles({
+    wrapper: {
+        display: "grid",
+        gridTemplateColums: "200px 1fr"
+    }
+});
 
 export const Chat = () => {
+    const classes = useStyles();
     const [messageList, setMessageList] = useState([]);
     const [value, setValue] = useState("");
 
@@ -66,4 +79,4 @@ export const Chat = () => {
             </ul>
         </div>
     );
-};
+}; 
